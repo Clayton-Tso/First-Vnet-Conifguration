@@ -29,21 +29,21 @@ Load balancing ensures that the application will be highly efficient, in additio
 
 What aspect of security do load balancers protect? 
 
-Load balancer was used to ensure incoming traffics through the firewall are evenly distrubtured to 3 VMs to ensure there is isnt an overload of usage and also to maintain server efficiency. 
+•	Load balancer was used to ensure incoming traffics through the firewall are evenly distrubtured to 3 VMs to ensure there is isnt an overload of usage and also to maintain server efficiency. 
 
 What is the advantage of a jump box?
 
-A jumpbox VM was created to act as the sole link to the 3 VMs via SSH private keys while the 3 VMs contain the SSH public keys. This method creates a added layer of protection for accessing the servers and also establishes a secure connection that can only be used through the jumpbox for additional security measure to restricts accessibility and also limited exposure of the servers to the internet directly.  
+•	A jumpbox VM was created to act as the sole link to the 3 VMs via SSH private keys while the 3 VMs contain the SSH public keys. This method creates a added layer of protection for accessing the servers and also establishes a secure connection that can only be used through the jumpbox for additional security measure to restricts accessibility and also limited exposure of the servers to the internet directly.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs
 
 What does Filebeat watch for?
 
-Filebeat monitors the log files of the 3 Vms, it also helps to collect, create and forward logs to the Elk server for further diagnostic and/or helps with record keeping in case of an intrusions.
+•	Filebeat monitors the log files of the 3 Vms, it also helps to collect, create and forward logs to the Elk server for further diagnostic and/or helps with record keeping in case of an intrusions.
 
 What does Metricbeat record?
 
-Metricbeat helps to monitors and collects statistics such as system and services, mySQL and forwards the raw data to the ELK server for readbale evaluations.  
+•	Metricbeat helps to monitors and collects statistics such as system and services, mySQL and forwards the raw data to the ELK server for readbale evaluations.  
 
 The configuration details of each machine may be found below.
 
@@ -59,23 +59,28 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only jumpbox virtual machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only jumpbox virtual machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 
+my host public IP address through SSH port 22
 
 Machines within the network can only be accessed by Jumpbox VM.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address? my jumpbox and
+•	only the Jumpbox VM is allowed access to the Elk server with the IP address of 10.1.0.4 with SSH port 22
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | No                  | 20.89.76.3           |
-|          |                     |                      |
-|          |                     |                      |
+| Name         | Publicly Accessible | Allowed IP Addresses |
+|--------------|---------------------|-------------|------------------|
+| Jump Box     | yes                 | 20.89.76.3 through SSH port 22  
+| TeamRed-ELK  | no                  | 10.0.0.4 through SSH Port 22
+| Web-1        | no                  | 10.1.0.5 through SSH Port 22
+| Web-2        | no                  | 10.1.0.6 through SSH Port 22
+| Web-VM3      | no                  | 10.1.0.7 through SSH Port 22
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+
+What is the main advantage of automating configuration with Ansible?
+•	With ansible, the main advantage is the automation ability to install the necessary initial system setup on multiple machines simultaneously while only needing to configure small amounts of files vs setting up each system individually and physically   
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
