@@ -4,11 +4,14 @@ My First VM configuration with ssh to jumpbox, ansible container and 3 VM
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+Network Map.pdf
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of these ansible playbooks can be used to install only certain pieces of it, such as filebeat.
 
-  - _TODO: Enter the playbook file._
+elk.yml
+filebeat-playbook.yml
+metricbeat-playbook.yml
+pentest.yml
 
 This document contains the following details:
 - Description of the Topologu
@@ -18,15 +21,14 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly efficient, in addition to restricting access to the network from unauthorized connections.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+load balancer was used to ensure incoming traffics through the firewall are evenly distrubtured to 3 VMs to ensure there is isnt an overload of usage and also to maintain server efficiency. A jumpbox VM was created to be used as the sole link to the 3 VMs via SSH private keys while the 3 VMs contain the SSH public keys; this method creates a secure connection that can only be established through the jumpbox as a added security measure to restricts accessibility and also ensure limited exposure of the servers to the internet  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
