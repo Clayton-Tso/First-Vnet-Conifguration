@@ -28,17 +28,21 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly efficient, in addition to restricting access to the network from unauthorized connections.
 
 What aspect of security do load balancers protect? 
-load balancer was used to ensure incoming traffics through the firewall are evenly distrubtured to 3 VMs to ensure there is isnt an overload of usage and also to maintain server efficiency. 
+
+Load balancer was used to ensure incoming traffics through the firewall are evenly distrubtured to 3 VMs to ensure there is isnt an overload of usage and also to maintain server efficiency. 
 
 What is the advantage of a jump box?
+
 A jumpbox VM was created to act as the sole link to the 3 VMs via SSH private keys while the 3 VMs contain the SSH public keys. This method creates a added layer of protection for accessing the servers and also establishes a secure connection that can only be used through the jumpbox for additional security measure to restricts accessibility and also limited exposure of the servers to the internet directly.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs
 
 What does Filebeat watch for?
+
 Filebeat monitors the log files of the 3 Vms, it also helps to collect, create and forward logs to the Elk server for further diagnostic and/or helps with record keeping in case of an intrusions.
 
 What does Metricbeat record?
+
 Metricbeat helps to monitors and collects statistics such as system and services, mySQL and forwards the raw data to the ELK server for readbale evaluations.  
 
 The configuration details of each machine may be found below.
