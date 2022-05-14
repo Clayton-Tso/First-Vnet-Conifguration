@@ -4,7 +4,7 @@ My First VM configuration with ssh to jumpbox, ansible container and 3 VM
 
 The files in this repository were used to configure the network depicted below.
 
-Network Map.pdf
+https://github.com/Clayton-Tso/First-VM-Conifguration/blob/24a3694139ac1a04f0ea8945459ee259bc06347f/Network%20Map.pdf
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of these ansible playbooks can be used to install only certain pieces of it, such as filebeat.
 
