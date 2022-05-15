@@ -85,15 +85,19 @@ What is the main advantage of automating configuration with Ansible?
 The playbook implements the following tasks:
 
 •	installed docker into the VM
+
 ![image](https://user-images.githubusercontent.com/105409403/168459417-7453e5b5-cd50-4258-b8b8-8f1affb6b514.png)
         
 •	installed python 3-pip
+
 ![image](https://user-images.githubusercontent.com/105409403/168459432-d45b59b0-67e3-41bd-be3e-6fad722f54f6.png)
       
 •	installed docker container module
+
 ![image](https://user-images.githubusercontent.com/105409403/168459520-c5f1b910-15cc-445d-b427-8db046594de4.png)
       
 •	increase virtual memory
+
 ![image](https://user-images.githubusercontent.com/105409403/168459489-f6bc4879-8f05-423b-931f-8bff83283d5c.png)
     
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -149,14 +153,29 @@ Web-VM3
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
+Verify my public address to ensure it hasnt changed, if it had adjust the Ip address in the netwoek security groups, update the SSH rules.
+
 SSH into the control node and follow the steps below:
 - Copy the YML file to ANSIBLE
 - Update the CONFIG file to include REMOTE USERS AND PORTS
 - Run the playbook, and navigate to KIBANA (http://20.51.104.15:5601/app/kibana#) to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which file is the playbook? 
+Docker 
+https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Docker
+Elk
+https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Elk%20Playbook
+Filebeat
+https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Filebeat-Playbook
+Metricbeat
+https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Metricbeat-%20Playbook
+
+Where do you copy it? /ETC/ANSIBLE/
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+i had all the playbooks created and saved in /etc/ansible/, with the pentest.yml file specifially design for the 3Vms. as for the Elk serer, the elk.yml was designed to install ELk into the server while filebeat-playbook.yml and metricbeat-playbook.yml was designed to install in the programs into the ELk server with intentioned to capture logs and monitors system status for the 3VMs.
+
+Which URL do you navigate to in order to check that the ELK server is running?
+http://20.51.104.15:5601/app/kibana#
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
