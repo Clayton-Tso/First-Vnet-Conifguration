@@ -84,49 +84,17 @@ What is the main advantage of automating configuration with Ansible?
 
 The playbook implements the following tasks:
 •	installed docker into the VM
-  - name: Install docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker
-        state: present
+  ![image](https://user-images.githubusercontent.com/105409403/168459417-7453e5b5-cd50-4258-b8b8-8f1affb6b514.png)
+        
 •	installed python 3-pip
-  - name: Install python3-pip
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
-      # Use pip module (It will default to pip3)
+  ![image](https://user-images.githubusercontent.com/105409403/168459432-d45b59b0-67e3-41bd-be3e-6fad722f54f6.png)
+      
 •	installed docker container module
-      - name: Install Docker module
-      pip:
-        name: docker
-        state: present
-      # Use command module
-    - name: Increase virtual memory
-      command: sysctl -w vm.max_map_count=262144
-•	set systemctl modules
-   # Use sysctl module
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: "262144"
-        state: present
-        reload: yes
-•	designate ports for the elk container
-  - name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
-        published_ports:
-          -  5601:5601
-          -  9200:9200
-          -  5044:5044
-
-
+  ![image](https://user-images.githubusercontent.com/105409403/168459520-c5f1b910-15cc-445d-b427-8db046594de4.png)
+      
+•	increase virtual memory
+    ![image](https://user-images.githubusercontent.com/105409403/168459489-f6bc4879-8f05-423b-931f-8bff83283d5c.png)
+    
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 Jumpbox docker 
@@ -150,7 +118,11 @@ Web 2 VM - Ip address 10.1.0.6
 Web VM3 - Ip address 10.1.0.7
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Filebeat
+![image](https://user-images.githubusercontent.com/105409403/168460107-670f83fb-0265-430d-a3dc-838285183cca.png)
+
+Metricbeat
+![image](https://user-images.githubusercontent.com/105409403/168460156-05423d12-51ff-41f5-9851-045c63624a0b.png)
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
