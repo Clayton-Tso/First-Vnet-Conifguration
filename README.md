@@ -67,29 +67,69 @@ Machines within the network can only be accessed by Jumpbox VM.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name         | Publicly Accessible | Allowed IP Addresses |
-|--------------|---------------------|-------------|------------------|
-| Jump Box     | yes                 | 20.89.76.3 through SSH port 22  
-| TeamRed-ELK  | no                  | 10.0.0.4 through SSH Port 22
-| Web-1        | no                  | 10.1.0.5 through SSH Port 22
-| Web-2        | no                  | 10.1.0.6 through SSH Port 22
-| Web-VM3      | no                  | 10.1.0.7 through SSH Port 22
+| Name         | Publicly Accessible | Allowed IP Addresses           |
+|--------------|---------------------|--------------------------------|
+| Jump Box     | yes                 | 20.89.76.3 through SSH port 22 |  
+| TeamRed-ELK  | no                  | 10.0.0.4 through SSH Port 22   |
+| Web-1        | no                  | 10.1.0.5 through SSH Port 22   |
+| Web-2        | no                  | 10.1.0.6 through SSH Port 22   |
+| Web-VM3      | no                  | 10.1.0.7 through SSH Port 22   |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
 What is the main advantage of automating configuration with Ansible?
-•	With ansible, the main advantage is the automation ability to install the necessary initial system setup on multiple machines simultaneously while only needing to configure small amounts of files vs setting up each system individually and physically   
+•	With ansible, main advantage are the automation ability to install the necessary initial system setup on multiple machines simultaneously while only needing to configure small amounts of files, no need for setting up each system individually and physically and ability to push updated configuration instantly to all linked machines.   
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+•	installed docker into the VM
+  - name: Install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker
+        state: present
+•	installed python 3-pip
+  - name: Install python3-pip
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+      # Use pip module (It will default to pip3)
+•	installed docker container module
+      - name: Install Docker module
+      pip:
+        name: docker
+        state: present
+      # Use command module
+    - name: Increase virtual memory
+      command: sysctl -w vm.max_map_count=262144
+•	set systemctl modules
+   # Use sysctl module
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        reload: yes
+•	designate ports for the elk container
+  - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        # Please list the ports that ELK runs on
+        published_ports:
+          -  5601:5601
+          -  9200:9200
+          -  5044:5044
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![image](https://user-images.githubusercontent.com/105409403/168458996-75448d33-64fc-4fbe-819c-0fdd1f9e18c4.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
