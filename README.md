@@ -200,7 +200,7 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 |sudo cat .ssh/id_rsa.pub	                                                                  |view the ssh public key                            |
 |ssh azadmin@JumpBoxProvisioner IP address	                                                |log into the Jump-Box-Provisioner                  |
 |sudo docker ps -a	                                                                        |list all active/inactive containers                |
-|cd /etc/ansible	                                                                          |Change directory to the Ansible directory          |
+|cd /etc/ansible	                                                                          |Change to the Ansible directory                    |
 |nano /etc/ansible/hosts	                                                                  |to edit the hosts file                             |
 |nano /etc/ansible/ansible.cfg	                                                            |to edit the ansible.cfg file                       |
 |nano /etc/ansible/pentest.yml	                                                            |to edit the My-Playbook                            |
@@ -209,7 +209,6 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 |ssh azadmin@Web-2 IP address	                                                              |to log into the Web-2 VM                           |
 |ssh azadmin@Web-VM3 IP address	                                                            |to log into the Web-VM3 VM                         |
 |ssh azadmin@TeamRed-ELK IP address                                                       	|to log into the ELK VM                             |
-|nano /etc/ansible/hosts	                                                                  |to edit the hosts file                             |
 |nano /etc/ansible/pentest.yml	                                                            |to edit the My-Playbook                            |
 |sudo apt-get update	                                                                      |this will update all packages                      |
 |sudo apt install docker.io	                                                                |install docker application                         |
