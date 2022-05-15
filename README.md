@@ -127,19 +127,32 @@ Metricbeat
 ![image](https://user-images.githubusercontent.com/105409403/168460156-05423d12-51ff-41f5-9851-045c63624a0b.png)
 
 These Beats allow us to collect the following information from each machine:
-with filebeats, syslog was monitored and data was captured
+
+With filebeats, syslog was monitored and data was captured
+
+Web -1, Web -2 and Web-VM3
+![image](https://user-images.githubusercontent.com/105409403/168460438-1fd4a1a7-77a6-49dc-8965-e2b925fb7557.png)
+
+With Metricbeat, ayatem information and inbound/outbound traffic are captured
+
 Web -1
-![image](https://user-images.githubusercontent.com/105409403/168460349-2bba3e4e-69d9-4745-a8a5-5d8250c6f51d.png)
-web -2
+![image](https://user-images.githubusercontent.com/105409403/168460511-fbc4a0a5-93fd-4a0c-a876-b65bba402252.png)
+
+Web -2
+![image](https://user-images.githubusercontent.com/105409403/168460553-6f66a1ba-2408-4d9a-9d31-f35d7ae41474.png)
+
+Web-VM3
+![image](https://user-images.githubusercontent.com/105409403/168460570-a59c26e8-ee80-474d-8697-9d4385896c8f.png)
+
 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the YML file to ANSIBLE
+- Update the CONFIG file to include REMOTE USERS AND PORTS
+- Run the playbook, and navigate to KIBANA (http://20.51.104.15:5601/app/kibana#) to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
