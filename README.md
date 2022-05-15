@@ -129,11 +129,25 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
+Jumpbox docker 
 ![image](https://user-images.githubusercontent.com/105409403/168458996-75448d33-64fc-4fbe-819c-0fdd1f9e18c4.png)
+Elk docker
+![image](https://user-images.githubusercontent.com/105409403/168459054-833b5273-8524-42e3-88b7-b765db8d2fec.png)
+Web 1 docker
+![image](https://user-images.githubusercontent.com/105409403/168459147-d00ff013-84d3-4480-b7e6-3d356f2a1cfd.png)
+Web 2 docker
+![image](https://user-images.githubusercontent.com/105409403/168459181-1153b1cb-8bc5-45d8-a89c-775aad341dee.png)
+Web VM3 docker
+![image](https://user-images.githubusercontent.com/105409403/168459213-8001320e-fe89-4499-8b85-74a20988d850.png)
+
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+Jumpbox VM - Ip address 10.0.0.4
+Web 1 VM - Ip address 10.1.0.5
+Web 2 VM - Ip address 10.1.0.6
+Web VM3 - Ip address 10.1.0.7
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
