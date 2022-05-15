@@ -83,17 +83,18 @@ What is the main advantage of automating configuration with Ansible?
 •	With ansible, main advantage are the automation ability to install the necessary initial system setup on multiple machines simultaneously while only needing to configure small amounts of files, no need for setting up each system individually and physically and ability to push updated configuration instantly to all linked machines.   
 
 The playbook implements the following tasks:
+
 •	installed docker into the VM
-  ![image](https://user-images.githubusercontent.com/105409403/168459417-7453e5b5-cd50-4258-b8b8-8f1affb6b514.png)
+![image](https://user-images.githubusercontent.com/105409403/168459417-7453e5b5-cd50-4258-b8b8-8f1affb6b514.png)
         
 •	installed python 3-pip
-  ![image](https://user-images.githubusercontent.com/105409403/168459432-d45b59b0-67e3-41bd-be3e-6fad722f54f6.png)
+![image](https://user-images.githubusercontent.com/105409403/168459432-d45b59b0-67e3-41bd-be3e-6fad722f54f6.png)
       
 •	installed docker container module
-  ![image](https://user-images.githubusercontent.com/105409403/168459520-c5f1b910-15cc-445d-b427-8db046594de4.png)
+![image](https://user-images.githubusercontent.com/105409403/168459520-c5f1b910-15cc-445d-b427-8db046594de4.png)
       
 •	increase virtual memory
-    ![image](https://user-images.githubusercontent.com/105409403/168459489-f6bc4879-8f05-423b-931f-8bff83283d5c.png)
+![image](https://user-images.githubusercontent.com/105409403/168459489-f6bc4879-8f05-423b-931f-8bff83283d5c.png)
     
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -118,6 +119,7 @@ Web 2 VM - Ip address 10.1.0.6
 Web VM3 - Ip address 10.1.0.7
 
 We have installed the following Beats on these machines:
+
 Filebeat
 ![image](https://user-images.githubusercontent.com/105409403/168460107-670f83fb-0265-430d-a3dc-838285183cca.png)
 
@@ -125,7 +127,11 @@ Metricbeat
 ![image](https://user-images.githubusercontent.com/105409403/168460156-05423d12-51ff-41f5-9851-045c63624a0b.png)
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+with filebeats, syslog was monitored and data was captured
+Web -1
+![image](https://user-images.githubusercontent.com/105409403/168460349-2bba3e4e-69d9-4745-a8a5-5d8250c6f51d.png)
+web -2
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
