@@ -117,6 +117,7 @@ Web VM3 docker
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
+
 Jumpbox VM - Ip address 10.0.0.4
 Web 1 VM - Ip address 10.1.0.5
 Web 2 VM - Ip address 10.1.0.6
@@ -173,7 +174,8 @@ https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5
 
 Where do you copy it? /ETC/ANSIBLE/
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-i had all the playbooks created and saved in /etc/ansible/, with the pentest.yml file specifially design for the 3Vms. as for the Elk serer, the elk.yml was designed to install ELk into the server while filebeat-playbook.yml and metricbeat-playbook.yml was designed to install in the programs into the ELk server with intentioned to capture logs and monitors system status for the 3VMs.
+
+I had all the playbooks created and saved in /etc/ansible/, with the pentest.yml file specifially design for the 3Vms. as for the Elk serer, the elk.yml was designed to install ELk into the server while filebeat-playbook.yml and metricbeat-playbook.yml was designed to install in the programs into the ELk server with intentioned to capture logs and monitors system status for the 3VMs.
 
 Which URL do you navigate to in order to check that the ELK server is running?
 http://20.51.104.15:5601/app/kibana#
