@@ -119,9 +119,13 @@ Web VM3 docker
 This ELK server is configured to monitor the following machines:
 
 Jumpbox VM - Ip address 10.0.0.4
+
 Web 1 VM - Ip address 10.1.0.5
+
 Web 2 VM - Ip address 10.1.0.6
+
 Web VM3 - Ip address 10.1.0.7
+
 
 We have installed the following Beats on these machines:
 
@@ -165,10 +169,13 @@ _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
 Docker 
 https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Docker
+
 Elk
 https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Elk%20Playbook
+
 Filebeat
 https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Filebeat-Playbook
+
 Metricbeat
 https://github.com/Clayton-Tso/First-VM-Conifguration/blob/52d78ea14296d4d3081e5f4ae94eb1e388a12440/Ansible/Metricbeat-%20Playbook
 
